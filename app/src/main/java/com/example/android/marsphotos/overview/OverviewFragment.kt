@@ -40,13 +40,13 @@ class OverviewFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val binding = FragmentOverviewBinding.inflate(inflater)
-
         // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
         binding.lifecycleOwner = this
 
         // Giving the binding access to the OverviewViewModel
         binding.viewModel = viewModel
-
+//        инициализировать адаптер RecyclerView в binding.photosGrid новым объектом PhotoGridAdapter
+        binding.photosGrid.adapter = PhotoGridAdapter()
         return binding.root
     }
 }
